@@ -12,6 +12,8 @@ body {
     font-weight: 900;
     color: var(--black);
     background: linear-gradient(110deg, var(--pink), var(--purple));
+    letter-spacing: -1px;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
 }
 
 button {
@@ -30,6 +32,8 @@ img {
 .wrapper {
     display: grid;
     grid-template-columns: 1fr;    
+    grid-gap: 20px;
+
 }
 
 .wrapper > * {
@@ -73,10 +77,9 @@ img {
 }
 
 .cta {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    justify-items: center;
+    align-content: center;
     background: var(--yellow);
 }
 .cta > .price {
@@ -88,13 +91,75 @@ img {
     margin: 0;
 }
 
+
 /*Menu*/
 
 [aria-controls="menu"] {
     display: none;
 }
 
-ul {
+.menu ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 0;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    list-style: none;
+    grid-gap: 10px;
+}
+
+.menu a {
+    text-transform: uppercase;
+    display: block;
+    background: var(--yellow);
+    padding: 10px;
+    text-decoration: none;
+    color: var(--black);
+    text-align: center;
+    font-size: 18px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 0;
+}
+
+.feature {
+    background: white;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+.feature .icon {
+    font-size: 30px;
+}
+
+.feature h3 {
+    font-size: 18px;
+    font-weight: 850;
+    letter-spacing: 0;
+}
+
+.feature p {
+    color: grey;
+    letter-spacing: 0;
+
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    padding: 50px;
+    align-items: center;
+    background: white;
+    display: 
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery h2 {
+    grid-column:  1 / -1;
 }
