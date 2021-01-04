@@ -148,10 +148,16 @@ img {
 
 .about {
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     padding: 50px;
     align-items: center;
     background: white;
+}
+
+.about .about_mockup {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-self: center;
 }
 
 .gallery {
@@ -189,16 +195,29 @@ background: linear-gradient(to left, var(--yellow), transparent);
     }
     .menu ul {
         max-height: 0;
+        overflow: hidden;
         transform: rotateX(90deg);
         transition: all 0.5s;
     }
     [aria-expanded="true"] ~ ul {
         display: grid;
         max-height: 500px;
-        transform: rotate(0);
+        transform: rotateX(0);
+    }
+
+    [aria-expanded="false"] .close {
+        display: none;
     }
     
+    [aria-expanded="true"] .close {
+        display: inline-block;
+    }
+
+    [aria-expanded="true"] .open {
+        display: none;
+    }
 }
+
 
 
 @media (max-width: 700px) {
@@ -206,6 +225,9 @@ background: linear-gradient(to left, var(--yellow), transparent);
         grid-template-areas: 
         "hero hero"
         "cta1 cta2"
+    }
+    .about {
+        grid-template-columns: 1fr;
     }
 }
 
